@@ -111,7 +111,7 @@ require_once 'db.php';
           <div class="card">
             <div class="card-body">
               <h4 style="color: #df002a;"><b>Hinweis</b></h4>
-              <p>Um mit der Überprüfung ordnungsgemäß beginnen zu können, benötigen wir zunächst einige Eckdaten von Ihnen.</p>    
+              <p>Um mit der Überprüfung  beginnen zu können, benötigen wir zunächst einige Eckdaten von Ihnen.</p>    
               <img src="Ressourcen/HausPiktogram.png" alt="Haus" style ="width: 70%;
               height: auto;">
             </div>
@@ -125,8 +125,7 @@ require_once 'db.php';
                     <form action="Kontoverbindung.php" method="post">
                         <!--JAVASCRIPT Validation einbauen für die einzelnen Felder-->
                         <label for="anrede"> Anrede *</label><br>
-                        <select name="fanrede" style="width: 210px;">
-                            <option value="" disabled selected>-- Bitte Wählen Sie --</option>
+                        <select name="fanrede" id="fanrede" style="width: 210px;" required>
                             <option value="Herr">Herr</option>
                             <option value="Frau">Frau</option>
                             <option value="Divers">Divers</option>
@@ -229,21 +228,6 @@ require_once 'db.php';
         </div>
       </div>        
       </footer>
-
-    <script>
-      function validation() {
-      const fvorname = document.getElementById('fvorname')
-      const formular = document.getElementById('formular')
-      const errorElement = document.getElementById('error')
-      formular.addEventListener("submit", (e) => {e.preventDefault})
-        let messages = []
-        if (name.values === "" || name.value == null) {messages.push("Bitte überprüfen Sie Ihre Angaben")
-      }
-      if (messages.length > 0) {
-        e.preventDefault()
-      errorElement.innerText = messages.join(', ')}
-    }
-    </script>
     </body>
 
 </html>

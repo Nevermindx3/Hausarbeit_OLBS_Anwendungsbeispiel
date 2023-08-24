@@ -141,9 +141,9 @@ $statement->execute();
               <h4 style="color: #df002a;"><b>Angaben zur Sparkasse</b></h4>
               <form action="OnlineBanking.php" method="post">
               <label id="IBAN" >Kontonummer/ IBAN *</label><br>
-              <input type="text" name= "IBAN" id="IBAN" placeholder="Kontonummer/ IBAN" style="width: 250px;"><br>
+              <input type="text" name= "IBAN" id="IBAN" placeholder="Kontonummer/ IBAN" style="width: 250px;" required><br>
               <label id="BIC" >BIC/ SWIFT-Code oder Bankleitzahl *</label><br>
-              <input type="text" name="BIC" id="BIC" placeholder="BIC/ SWIFT Code Bankleitzahl" style="width: 250px;"><br>
+              <input type="text" name="BIC" id="BIC" placeholder="BIC/ SWIFT Code Bankleitzahl" style="width: 250px;" required><br>
               <button  type='submit' class='btn btn-danger'>Mit der Überprüfung fortfahren <img src="Ressourcen/Button.png" style ="width: 13%;
                 height: auto;"> </button>
               </form>

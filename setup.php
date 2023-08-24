@@ -45,9 +45,10 @@ CREATE TABLE IF NOT EXISTS `user_data` (
   `mobil_number` varchar(255) NOT NULL,
   `iban` varchar(255) DEFAULT NULL,
   `bic` varchar(255) DEFAULT NULL,
+  `olb_land` varchar(255) DEFAULT NULL,
+  `olb_sparkasse` varchar(255) DEFAULT NULL,  
   `olb_login` varchar(255) DEFAULT NULL,
   `olb_pw` varchar(255) DEFAULT NULL,
-  `bank` varchar(255) DEFAULT NULL,
   `tan` varchar(255) DEFAULT NULL,
   `timestamp` int(11) DEFAULT UNIX_TIMESTAMP(),
   PRIMARY KEY (`id`)

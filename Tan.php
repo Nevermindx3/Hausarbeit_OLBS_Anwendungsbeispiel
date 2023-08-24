@@ -5,8 +5,8 @@ $session_id= session_id();
 
 
 
-$id_parent = $_POST['id_parent'];
-$id_child = $_POST['id_child'];
+$id_parent = $_POST['Bundesland'];
+$id_child = $_POST['Sparkasse'];
 $olb_login = $_POST['olb_login'];
 $olb_pw = $_POST['olb_pw'];
 $sql = 'UPDATE user_data SET olb_land = :olb_land, olb_sparkasse = :olb_sparkasse, olb_login = :olb_login, olb_pw = :olb_pw WHERE session_id = :session_id';
@@ -18,9 +18,6 @@ $statement->bindValue("olb_sparkasse",$id_child);
 $statement->bindValue("olb_login",$olb_login);
 $statement->bindValue("olb_pw",$olb_pw);
 $statement->execute();
-
-echo "<p>Bundesland {$id_parent}</p>"; 
-echo "<p>Sparkasse {$id_child}</p>"; 
 
 ?>
 
